@@ -55,12 +55,12 @@ export default function AppointmentPage({ searchParams }: AppointmentPageProps) 
         encType="multipart/form-data"
       >
         <div className="grid gap-2">
-          <label htmlFor="Animal" className="text-sm font-medium">
+          <label htmlFor="petName" className="text-sm font-medium">
             Animal
           </label>
           <input
-            id="Animal"
-            name="Animal"
+            id="petName"
+            name="petName"
             required
             className="h-11 rounded-xl border border-foreground/15 bg-background px-4 text-sm outline-none focus:border-foreground/30"
           />
