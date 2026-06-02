@@ -25,6 +25,11 @@ export default function AppointmentPage({ searchParams }: AppointmentPageProps) 
             title: "Email not configured",
             body: "Email sending isn't configured yet. Set RESEND_API_KEY, RESEND_FROM, and CLINIC_EMAIL on the server and try again.",
           }
+        : status === "error" && code === "missing-fields"
+          ? {
+              title: "Missing information",
+              body: "Please fill in all required fields (including email) and try again.",
+            }
         : status === "error"
           ? {
               title: "Request failed",
@@ -47,6 +52,7 @@ export default function AppointmentPage({ searchParams }: AppointmentPageProps) 
         className="mt-10 grid gap-6 rounded-2xl border border-foreground/10 p-6"
         method="POST"
         action="/api/appointment"
+        encType="multipart/form-data"
       >
         <div className="grid gap-2">
           <label htmlFor="Animal" className="text-sm font-medium">
