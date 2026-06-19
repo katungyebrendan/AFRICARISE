@@ -5,7 +5,7 @@ export default function Home() {
     <div className="mx-auto w-full max-w-5xl px-6 py-12">
       <section className="rounded-2xl border border-foreground/10 bg-gradient-to-r from-fuchsia-500/10 via-purple-500/10 to-sky-500/10 p-8 md:p-12">
         <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
-          Gentle, modern care for your pets.
+          Easy and convinient response for all your animals.
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-7 text-foreground/80 md:text-lg">
           From routine checkups to urgent needs, our clinic provides
@@ -64,7 +64,7 @@ export default function Home() {
             href="/contact"
             className="inline-flex h-11 items-center justify-center rounded-full bg-foreground px-5 text-sm font-semibold text-background hover:opacity-90"
           >
-            Contact the clinic
+            Contact us
           </Link>
         </div>
       </section>
