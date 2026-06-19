@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdfbf5;
+  --foreground: #123d2b;
+  --brand-green: #0f5a38;
+  --brand-green-soft: #1f7a49;
+  --brand-gold: #e7a115;
+  --brand-orange: #ea6b0f;
+  --brand-purple: #6e1c7d;
+  --card: rgba(255, 255, 255, 0.78);
+  --line: rgba(15, 90, 56, 0.14);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-soft: var(--brand-green-soft);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-purple: var(--brand-purple);
+  --font-sans: var(--font-body);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), sans-serif;
+  background-image:
+    radial-gradient(circle at 5% 5%, rgba(231, 161, 21, 0.2), transparent 40%),
+    radial-gradient(circle at 92% 8%, rgba(110, 28, 125, 0.12), transparent 30%),
+    radial-gradient(circle at 84% 82%, rgba(31, 122, 73, 0.18), transparent 34%);
+}
+
+.theme-dark {
+  --background: #0b1f1a;
+  --foreground: #ecf7ef;
+  --brand-green: #77d7a1;
+  --brand-green-soft: #57bd87;
+  --brand-gold: #ffcd5c;
+  --brand-orange: #ff9148;
+  --brand-purple: #cc92de;
+  --card: rgba(18, 45, 38, 0.78);
+  --line: rgba(119, 215, 161, 0.25);
+}
+
+.font-heading {
+  font-family: var(--font-heading), serif;
+}
+
+.nav-link {
+  color: var(--foreground);
+  opacity: 0.86;
+  transition: opacity 180ms ease, color 180ms ease;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  color: var(--brand-purple);
+}
+
+.frost-card {
+  border: 1px solid var(--line);
+  background: var(--card);
+  backdrop-filter: blur(6px);
+}
+
+.sunrise-band {
+  background: linear-gradient(
+    110deg,
+    rgba(231, 161, 21, 0.24),
+    rgba(234, 107, 15, 0.2),
+    rgba(31, 122, 73, 0.2),
+    rgba(110, 28, 125, 0.22)
+  );
+}
+
+.rise-up {
+  animation: rise-up 650ms ease both;
+}
+
+@keyframes rise-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

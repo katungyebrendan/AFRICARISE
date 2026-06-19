@@ -1,21 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, Playfair_Display } from "next/font/google";
 import Link from "next/link";
+import { ThemeToggle } from "./components/theme-toggle";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const headingFont = Playfair_Display({
+  variable: "--font-heading",
   subsets: ["latin"],
+  weight: ["600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bodyFont = Manrope({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Vet Clinic",
-  description: "Veterinary care: checkups, vaccinations, surgery, and emergency care.",
+  title: "MunghaRise Africa",
+  description:
+    "Empowering youth and women through skills, mentorship, and community-led transformation.",
 };
 
 export default function RootLayout({
@@ -26,44 +30,41 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${headingFont.variable} ${bodyFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <header className="border-b border-foreground/10">
-          <div className="mx-auto flex w-full max-w-5xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
-            <Link href="/" className="font-semibold tracking-tight">
-              Happy Tails Veterinary Clinic
+        <header className="sticky top-0 z-30 border-b border-brand-green/15 bg-background/90 backdrop-blur-md">
+          <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+            <Link href="/" className="group inline-flex items-center gap-3">
+              <span className="inline-block h-3 w-3 rounded-full bg-brand-gold shadow-[0_0_24px_rgba(231,161,21,0.7)] transition-transform group-hover:scale-110" />
+              <span className="font-heading text-xl tracking-wide text-brand-green">
+                MunghaRise Africa
+              </span>
             </Link>
-            <nav className="flex flex-wrap items-center gap-4 text-sm font-medium sm:justify-end sm:gap-6">
-              <Link href="/" className="hover:underline underline-offset-4">
+            <div className="flex flex-wrap items-center gap-5 text-sm font-semibold sm:justify-end">
+              <nav className="flex flex-wrap items-center gap-4 sm:gap-6">
+                <Link href="/" className="nav-link">
                 Home
               </Link>
-              <Link
-                href="/appointment"
-                className="hover:underline underline-offset-4"
-              >
-                Appointment
-              </Link>
-              <Link
-                href="/services"
-                className="hover:underline underline-offset-4"
-              >
-                Services
-              </Link>
-              <Link href="/about" className="hover:underline underline-offset-4">
+                <Link href="/appointment" className="nav-link">
+                  Get Involved
+                </Link>
+                <Link href="/services" className="nav-link">
+                  Programs
+                </Link>
+                <Link href="/about" className="nav-link">
                 About
               </Link>
-              <Link
-                href="/contact"
-                className="hover:underline underline-offset-4"
-              >
+                <Link href="/contact" className="nav-link">
                 Contact
               </Link>
-            </nav>
+              </nav>
+              <ThemeToggle />
+            </div>
           </div>
         </header>
 
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 relative overflow-x-clip">{children}</main>
       </body>
     </html>
   );
