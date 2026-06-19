@@ -14,54 +14,55 @@ function getField(formData: FormData, name: string): string {
   return typeof value === "string" ? value.trim() : "";
 }
 
-function buildClinicEmailText(params: {
-  petName: string;
-  ownerName: string;
-  ownerEmail: string;
+function buildOrgEmailText(params: {
+  firstName: string;
+  lastName: string;
+  email: string;
   phone: string;
-  dateRequested: string;
-  notes: string;
+  location: string;
+  focusArea: string;
+  message: string;
 }): string {
-  const { petName, ownerName, ownerEmail, phone, dateRequested, notes } = params;
+  const { firstName, lastName, email, phone, location, focusArea, message } = params;
   return [
-    "New appointment request",
+    "New MunghaRise Africa application",
     "",
-    `Pet: ${petName}`,
-    `Owner: ${ownerName}`,
-    `Email: ${ownerEmail}`,
+    `Name: ${firstName} ${lastName}`,
+    `Email: ${email}`,
     `Phone: ${phone}`,
-    `Date requested: ${dateRequested}`,
+    `Location: ${location}`,
+    `Interested in: ${focusArea}`,
     "",
-    "Notes:",
-    notes || "(none)",
+    "Applicant message:",
+    message || "(none)",
   ].join("\n");
 }
 
 function buildCustomerEmailText(params: {
-  petName: string;
-  ownerName: string;
-  dateRequested: string;
+  firstName: string;
+  focusArea: string;
 }): string {
-  const { petName, ownerName, dateRequested } = params;
+  const { firstName, focusArea } = params;
   return [
-    `Hi ${ownerName},`,
+    `Hi ${firstName},`,
     "",
-    "We received your appointment request.",
+    "Thank you for reaching out to MunghaRise Africa.",
     "",
-    `Pet: ${petName}`,
-    `Date requested: ${dateRequested}`,
+    `Interest area: ${focusArea}`,
     "",
-    "We’ll contact you soon to confirm a time.",
+    "Our team will contact you soon with next steps.",
     "",
-    "— Vet Clinic",
+    "Empowering youth. Empowering women. Transforming Africa.",
+    "",
+    "- MunghaRise Africa",
   ].join("\n");
 }
 
 export async function POST(req: Request) {
   const resendApiKey = getRequiredEnv("RESEND_API_KEY");
   const resendFrom = getRequiredEnv("RESEND_FROM");
-  const clinicEmail = getRequiredEnv("CLINIC_EMAIL");
-  if (!resendApiKey || !resendFrom || !clinicEmail) {
+  const orgEmail = getRequiredEnv("ORG_EMAIL");
+  if (!resendApiKey || !resendFrom || !orgEmail) {
     const redirectUrl = new URL("/appointment", req.url);
     redirectUrl.searchParams.set("status", "error");
     redirectUrl.searchParams.set("code", "missing-email-config");
@@ -70,14 +71,15 @@ export async function POST(req: Request) {
 
   const formData = await req.formData();
 
-  const petName = getField(formData, "petName");
-  const ownerName = getField(formData, "ownerName");
-  const ownerEmail = getField(formData, "ownerEmail");
+  const firstName = getField(formData, "firstName");
+  const lastName = getField(formData, "lastName");
+  const email = getField(formData, "email");
   const phone = getField(formData, "phone");
-  const dateRequested = getField(formData, "dateRequested");
-  const notes = getField(formData, "notes");
+  const location = getField(formData, "location");
+  const focusArea = getField(formData, "focusArea");
+  const message = getField(formData, "message");
 
-  if (!petName || !ownerName || !ownerEmail || !phone || !dateRequested) {
+  if (!firstName || !lastName || !email || !phone || !location || !focusArea) {
     const redirectUrl = new URL("/appointment", req.url);
     redirectUrl.searchParams.set("status", "error");
     redirectUrl.searchParams.set("code", "missing-fields");
@@ -89,25 +91,26 @@ export async function POST(req: Request) {
   try {
     await resend.emails.send({
       from: resendFrom,
-      to: clinicEmail,
-      replyTo: ownerEmail,
-      subject: `New appointment request — ${petName} — ${dateRequested}`,
-      text: buildClinicEmailText({
-        petName,
-        ownerName,
-        ownerEmail,
+      to: orgEmail,
+      replyTo: email,
+      subject: `New application - ${firstName} ${lastName} - ${focusArea}`,
+      text: buildOrgEmailText({
+        firstName,
+        lastName,
+        email,
         phone,
-        dateRequested,
-        notes,
+        location,
+        focusArea,
+        message,
       }),
     });
 
     try {
       await resend.emails.send({
         from: resendFrom,
-        to: ownerEmail,
-        subject: "We received your appointment request",
-        text: buildCustomerEmailText({ petName, ownerName, dateRequested }),
+        to: email,
+        subject: "We received your MunghaRise Africa application",
+        text: buildCustomerEmailText({ firstName, focusArea }),
       });
     } catch {
       const redirectUrl = new URL("/appointment", req.url);
