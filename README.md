@@ -30,8 +30,8 @@ The Get Involved page at `/get-involved` posts to `/api/appointment`, which send
 Set these environment variables:
 
 - `RESEND_API_KEY`
-- `RESEND_FROM` (example: `MunghaRise Africa <onboarding@resend.dev>`)
-- `ORG_EMAIL`
+- `RESEND_FROM` (example: `MunghaRise Africa <info@mugharise.com>`)
+- `ORG_EMAIL` (use `info@mugharise.com`; email routing can forward it to the destination Gmail inbox)
 
 ### Local development
 
