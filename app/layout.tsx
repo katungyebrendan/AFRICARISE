@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import { Navigation } from "./components/navigation";
 import { ThemeToggle } from "./components/theme-toggle";
@@ -49,7 +50,16 @@ export default function RootLayout({
         <header className="sticky top-0 z-30 border-b border-brand-green/15 bg-background/90 backdrop-blur-md">
           <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
             <Link href="/" className="group inline-flex items-center gap-3">
-              <span className="inline-block h-3 w-3 rounded-full bg-brand-gold shadow-[0_0_24px_rgba(231,161,21,0.7)] transition-transform group-hover:scale-110" />
+              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-brand-green/15 bg-white shadow-[0_8px_28px_rgba(15,90,56,0.12)] transition-transform group-hover:scale-105">
+                <Image
+                  src="/logo.jpg"
+                  alt="MunghaRise Africa logo"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 object-contain"
+                  priority
+                />
+              </span>
               <div>
                 <span className="font-heading block text-xl tracking-wide text-brand-green">
                   MunghaRise Africa
