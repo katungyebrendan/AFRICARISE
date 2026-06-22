@@ -60,6 +60,14 @@ body {
   color: var(--brand-purple);
 }
 
+.nav-link-active {
+  color: var(--brand-purple);
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
 .frost-card {
   border: 1px solid var(--line);
   background: var(--card);
