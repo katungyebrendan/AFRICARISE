@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HomeHeroSlider } from "./components/home-hero-slider";
 
 import {
   missionFocus,
@@ -11,8 +12,9 @@ import {
 export default function Home() {
   return (
     <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
-      <section className="rise-up rounded-3xl border border-brand-green/15 p-8 md:p-12 sunrise-band shadow-[0_24px_80px_rgba(15,90,56,0.12)]">
-        <div>
+      <section className="rise-up relative overflow-hidden rounded-3xl border border-brand-green/15 p-8 md:p-12 shadow-[0_24px_80px_rgba(15,90,56,0.12)]">
+        <HomeHeroSlider />
+        <div className="relative z-10 max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-purple">
             {siteTagline}
           </p>
