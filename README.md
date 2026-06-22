@@ -22,7 +22,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Get Involved form configuration
 
-The Get Involved page posts to `/api/appointment`, which sends emails using Resend:
+The Get Involved page at `/get-involved` posts to `/api/appointment`, which sends emails using Resend:
 
 1. MunghaRise Africa receives the application email.
 2. Applicant receives a confirmation email.

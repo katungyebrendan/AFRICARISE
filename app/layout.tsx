@@ -19,8 +19,20 @@ const bodyFont = Manrope({
 export const metadata: Metadata = {
   title: "MunghaRise Africa",
   description:
-    "Empowering youth and women through skills, mentorship, and community-led transformation.",
+    "Rising Opportunities. Transforming Lives. Empowering women and youth across Africa through entrepreneurship, innovation, leadership, and sustainable livelihoods.",
 };
+
+const navigationLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About Us" },
+  { href: "/programs", label: "Programs" },
+  { href: "/projects", label: "Projects" },
+  { href: "/impact", label: "Impact" },
+  { href: "/partners", label: "Partners" },
+  { href: "/news", label: "News" },
+  { href: "/get-involved", label: "Get Involved" },
+  { href: "/contact", label: "Contact" },
+];
 
 export default function RootLayout({
   children,
@@ -37,27 +49,22 @@ export default function RootLayout({
           <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
             <Link href="/" className="group inline-flex items-center gap-3">
               <span className="inline-block h-3 w-3 rounded-full bg-brand-gold shadow-[0_0_24px_rgba(231,161,21,0.7)] transition-transform group-hover:scale-110" />
-              <span className="font-heading text-xl tracking-wide text-brand-green">
-                MunghaRise Africa
-              </span>
+              <div>
+                <span className="font-heading block text-xl tracking-wide text-brand-green">
+                  MunghaRise Africa
+                </span>
+                <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-brand-purple">
+                  Rising Opportunities. Transforming Lives.
+                </span>
+              </div>
             </Link>
             <div className="flex flex-wrap items-center gap-5 text-sm font-semibold sm:justify-end">
               <nav className="flex flex-wrap items-center gap-4 sm:gap-6">
-                <Link href="/" className="nav-link">
-                Home
-              </Link>
-                <Link href="/appointment" className="nav-link">
-                  Get Involved
-                </Link>
-                <Link href="/services" className="nav-link">
-                  Programs
-                </Link>
-                <Link href="/about" className="nav-link">
-                About
-              </Link>
-                <Link href="/contact" className="nav-link">
-                Contact
-              </Link>
+                {navigationLinks.map((link) => (
+                  <Link key={link.href} href={link.href} className="nav-link">
+                    {link.label}
+                  </Link>
+                ))}
               </nav>
               <ThemeToggle />
             </div>
@@ -65,6 +72,48 @@ export default function RootLayout({
         </header>
 
         <main className="flex-1 relative overflow-x-clip">{children}</main>
+
+        <footer className="border-t border-brand-green/15 bg-background/90">
+          <div className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-10 md:grid-cols-[1.1fr_0.9fr_1fr]">
+            <div>
+              <p className="font-heading text-2xl text-brand-green">MunghaRise Africa</p>
+              <p className="mt-3 max-w-md text-sm leading-7 text-foreground/80">
+                Rise. Empower. Transform. Empowering women and youth to build Africa&apos;s future.
+              </p>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-purple">
+                Quick Links
+              </p>
+              <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+                {navigationLinks.map((link) => (
+                  <Link key={link.href} href={link.href} className="nav-link">
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-purple">
+                Newsletter
+              </p>
+              <p className="mt-4 text-sm leading-7 text-foreground/80">
+                Subscribe to receive updates on programs, opportunities, grants, and events.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-5 inline-flex h-11 items-center justify-center rounded-full bg-brand-green px-5 text-sm font-semibold text-white transition hover:opacity-90"
+              >
+                Stay Connected
+              </Link>
+            </div>
+          </div>
+          <div className="border-t border-brand-green/10 px-6 py-4 text-center text-sm text-foreground/70">
+            © 2026 MunghaRise Africa. All Rights Reserved.
+          </div>
+        </footer>
       </body>
     </html>
   );

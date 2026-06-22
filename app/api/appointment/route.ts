@@ -52,7 +52,7 @@ function buildCustomerEmailText(params: {
     "",
     "Our team will contact you soon with next steps.",
     "",
-    "Empowering youth. Empowering women. Transforming Africa.",
+    "Rise. Empower. Transform.",
     "",
     "- MunghaRise Africa",
   ].join("\n");
@@ -63,7 +63,7 @@ export async function POST(req: Request) {
   const resendFrom = getRequiredEnv("RESEND_FROM");
   const orgEmail = getRequiredEnv("ORG_EMAIL");
   if (!resendApiKey || !resendFrom || !orgEmail) {
-    const redirectUrl = new URL("/appointment", req.url);
+    const redirectUrl = new URL("/get-involved", req.url);
     redirectUrl.searchParams.set("status", "error");
     redirectUrl.searchParams.set("code", "missing-email-config");
     return NextResponse.redirect(redirectUrl, 303);
@@ -80,7 +80,7 @@ export async function POST(req: Request) {
   const message = getField(formData, "message");
 
   if (!firstName || !lastName || !email || !phone || !location || !focusArea) {
-    const redirectUrl = new URL("/appointment", req.url);
+    const redirectUrl = new URL("/get-involved", req.url);
     redirectUrl.searchParams.set("status", "error");
     redirectUrl.searchParams.set("code", "missing-fields");
     return NextResponse.redirect(redirectUrl, 303);
@@ -113,19 +113,19 @@ export async function POST(req: Request) {
         text: buildCustomerEmailText({ firstName, focusArea }),
       });
     } catch {
-      const redirectUrl = new URL("/appointment", req.url);
+      const redirectUrl = new URL("/get-involved", req.url);
       redirectUrl.searchParams.set("status", "success");
       redirectUrl.searchParams.set("code", "confirmation-failed");
       return NextResponse.redirect(redirectUrl, 303);
     }
   } catch {
-    const redirectUrl = new URL("/appointment", req.url);
+    const redirectUrl = new URL("/get-involved", req.url);
     redirectUrl.searchParams.set("status", "error");
     redirectUrl.searchParams.set("code", "send-failed");
     return NextResponse.redirect(redirectUrl, 303);
   }
 
-  const redirectUrl = new URL("/appointment", req.url);
+  const redirectUrl = new URL("/get-involved", req.url);
   redirectUrl.searchParams.set("status", "success");
   return NextResponse.redirect(redirectUrl, 303);
 }
