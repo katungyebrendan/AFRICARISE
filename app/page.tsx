@@ -14,14 +14,14 @@ export default function Home() {
     <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
       <section className="rise-up relative overflow-hidden rounded-3xl border border-brand-green/15 p-8 md:p-12 shadow-[0_24px_80px_rgba(15,90,56,0.12)]">
         <HomeHeroSlider />
-        <div className="relative z-10 max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-purple">
+        <div className="relative z-10 max-w-3xl text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-gold">
             {siteTagline}
           </p>
-          <h1 className="font-heading mt-4 text-4xl leading-tight text-brand-green md:text-6xl">
+          <h1 className="font-heading mt-4 text-4xl leading-tight md:text-6xl">
             Empowering Women and Youth to Rise, Lead and Transform Africa
           </h1>
-          <p className="mt-6 max-w-3xl text-base leading-7 text-foreground/85 md:text-lg">
+          <p className="mt-6 max-w-3xl text-base leading-7 text-white/92 md:text-lg">
             MunghaRise Africa is a social enterprise and development organization
             dedicated to creating opportunities that empower women and young
             people through entrepreneurship, skills development, innovation,
