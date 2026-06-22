@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 import Link from "next/link";
+import { Navigation } from "./components/navigation";
 import { ThemeToggle } from "./components/theme-toggle";
 import "./globals.css";
 
@@ -59,13 +60,7 @@ export default function RootLayout({
               </div>
             </Link>
             <div className="flex flex-wrap items-center gap-5 text-sm font-semibold sm:justify-end">
-              <nav className="flex flex-wrap items-center gap-4 sm:gap-6">
-                {navigationLinks.map((link) => (
-                  <Link key={link.href} href={link.href} className="nav-link">
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
+              <Navigation links={navigationLinks} />
               <ThemeToggle />
             </div>
           </div>
