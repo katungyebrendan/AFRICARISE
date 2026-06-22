@@ -22,7 +22,7 @@ export function HomeHeroSlider() {
 
   return (
     <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(231,161,21,0.28),rgba(234,107,15,0.22),rgba(31,122,73,0.24),rgba(110,28,125,0.24))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(231,161,21,0.16),rgba(234,107,15,0.12),rgba(31,122,73,0.14),rgba(110,28,125,0.16))]" />
       {slides.map((slide, index) => (
         <div
           key={slide}
@@ -32,8 +32,8 @@ export function HomeHeroSlider() {
           style={{ backgroundImage: `url(${slide})` }}
         />
       ))}
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(253,251,245,0.94)_0%,rgba(253,251,245,0.82)_48%,rgba(253,251,245,0.54)_100%)] theme-dark:bg-[linear-gradient(90deg,rgba(11,31,26,0.95)_0%,rgba(11,31,26,0.84)_48%,rgba(11,31,26,0.58)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_84%_50%,rgba(255,255,255,0.18),transparent_34%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,28,20,0.72)_0%,rgba(8,28,20,0.48)_46%,rgba(8,28,20,0.14)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_48%,rgba(255,255,255,0.08),transparent_34%)]" />
     </div>
   );
 }
