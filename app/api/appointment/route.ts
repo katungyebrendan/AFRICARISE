@@ -60,9 +60,9 @@ function buildCustomerEmailText(params: {
 
 export async function POST(req: Request) {
   const resendApiKey = getRequiredEnv("RESEND_API_KEY");
-  const resendFrom = getRequiredEnv("RESEND_FROM");
-  const orgEmail = getRequiredEnv("ORG_EMAIL");
-  if (!resendApiKey || !resendFrom || !orgEmail) {
+  const resendFrom = process.env.RESEND_FROM || "MunghaRise Africa <info@mugharise.com>";
+  const orgEmail = process.env.ORG_EMAIL || "info@mugharise.com";
+  if (!resendApiKey) {
     const redirectUrl = new URL("/get-involved", req.url);
     redirectUrl.searchParams.set("status", "error");
     redirectUrl.searchParams.set("code", "missing-email-config");

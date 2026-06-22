@@ -22,6 +22,13 @@ export const metadata: Metadata = {
   title: "MunghaRise Africa",
   description:
     "Rising Opportunities. Transforming Lives. Empowering women and youth across Africa through entrepreneurship, innovation, leadership, and sustainable livelihoods.",
+  icons: {
+    icon: [
+      { url: "/favicon.jpg", type: "image/jpeg" },
+      { url: "/logo.jpg", type: "image/jpeg" },
+    ],
+    apple: [{ url: "/favicon.jpg", type: "image/jpeg" }],
+  },
 };
 
 const navigationLinks = [
