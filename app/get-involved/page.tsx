@@ -26,7 +26,7 @@ export default async function GetInvolvedPage({ searchParams }: GetInvolvedPageP
       : status === "error" && code === "missing-email-config"
         ? {
             title: "Email not configured",
-            body: "Email sending is not configured yet. Set RESEND_API_KEY, RESEND_FROM, and ORG_EMAIL on the server and try again.",
+            body: "Email sending is not configured yet. Set RESEND_API_KEY on the server and try again.",
           }
         : status === "error" && code === "missing-fields"
           ? {
