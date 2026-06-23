@@ -42,15 +42,15 @@ export default async function GetInvolvedPage({ searchParams }: GetInvolvedPageP
 
   return (
     <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
-      <h1 className="font-heading text-4xl tracking-tight text-brand-green md:text-5xl">Get Involved</h1>
+      <h1 className="font-heading text-4xl tracking-tight text-brand-gold md:text-5xl">Get Involved</h1>
       <p className="mt-4 max-w-3xl text-base leading-7 text-foreground/80">
-        Support the movement by volunteering, mentoring, sponsoring community initiatives, donating, or applying to join a program.
+        Support the movement by volunteering, mentoring, sponsoring community initiatives, donating, or applying to join a program. Fill the form below to get started.
       </p>
 
       <section className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
         {involvementOptions.map((option) => (
           <article key={option.title} className="frost-card rounded-2xl p-5">
-            <h2 className="text-lg font-semibold text-brand-green">{option.title}</h2>
+            <h2 className="text-lg font-semibold text-brand-gold">{option.title}</h2>
             <p className="mt-2 text-sm leading-6 text-foreground/80">{option.description}</p>
           </article>
         ))}

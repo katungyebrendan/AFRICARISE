@@ -35,7 +35,7 @@ export default function Home() {
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-purple">
             Mission Focus
           </p>
-          <h2 className="font-heading mt-4 text-3xl tracking-tight text-brand-green">
+          <h2 className="font-heading mt-4 text-3xl tracking-tight text-brand-gold">
             {siteSlogan}
           </h2>
           <p className="mt-4 text-sm leading-7 text-foreground/80 md:text-base">
@@ -44,13 +44,13 @@ export default function Home() {
         </div>
 
         <div>
-        <h2 className="font-heading text-3xl tracking-tight text-brand-green">
+        <h2 className="font-heading text-3xl tracking-tight text-brand-gold">
           What we focus on
         </h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {programs.map((program) => (
               <article key={program.title} className="frost-card rounded-2xl p-6">
-                <h3 className="text-lg font-semibold text-brand-green">{program.title}</h3>
+                <h3 className="text-lg font-semibold text-brand-gold">{program.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-foreground/80">
                   {program.description}
                 </p>
@@ -60,7 +60,7 @@ export default function Home() {
           <div className="mt-6">
             <Link
               href="/programs"
-              className="inline-flex h-11 items-center justify-center rounded-full bg-brand-gold px-5 text-sm font-semibold text-white transition hover:brightness-95"
+              className="inline-flex h-11 items-center justify-center rounded-full bg-brand-purple px-5 text-sm font-semibold text-white transition hover:opacity-90"
             >
               Explore All Programs
             </Link>
@@ -71,7 +71,7 @@ export default function Home() {
       <section className="mt-12 rounded-3xl border border-brand-green/15 p-8 md:p-10 frost-card">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <h2 className="font-heading text-3xl tracking-tight text-brand-green">Featured projects</h2>
+            <h2 className="font-heading text-3xl tracking-tight text-brand-gold">Featured projects</h2>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-foreground/80 md:text-base">
               We turn mission into action through enterprise, innovation, climate resilience, and digital inclusion.
             </p>
@@ -87,7 +87,7 @@ export default function Home() {
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {projects.slice(0, 3).map((project) => (
             <article key={project.title} className="rounded-2xl border border-brand-green/15 bg-background/50 p-5">
-              <h3 className="text-lg font-semibold text-brand-green">{project.title}</h3>
+              <h3 className="text-lg font-semibold text-brand-gold">{project.title}</h3>
               <p className="mt-2 text-sm leading-6 text-foreground/80">{project.description}</p>
             </article>
           ))}
