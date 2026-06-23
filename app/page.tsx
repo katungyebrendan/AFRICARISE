@@ -60,7 +60,7 @@ export default function Home() {
           <div className="mt-6">
             <Link
               href="/programs"
-              className="inline-flex h-11 items-center justify-center rounded-full bg-brand-gold px-5 text-sm font-semibold text-white transition hover:brightness-95"
+              className="inline-flex h-11 items-center justify-center rounded-full bg-brand-purple px-5 text-sm font-semibold text-white transition hover:opacity-90"
             >
               Explore All Programs
             </Link>

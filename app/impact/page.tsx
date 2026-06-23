@@ -27,7 +27,7 @@ export default function ImpactPage() {
         </p>
         <Link
           href="/get-involved"
-          className="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-brand-green px-5 text-sm font-semibold text-white transition hover:opacity-90"
+          className="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-brand-purple px-5 text-sm font-semibold text-white transition hover:opacity-90"
         >
           Help Expand Our Impact
         </Link>

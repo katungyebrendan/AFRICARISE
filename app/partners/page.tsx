@@ -43,7 +43,7 @@ export default function PartnersPage() {
         </p>
         <Link
           href="/contact"
-          className="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-brand-green px-5 text-sm font-semibold text-white transition hover:opacity-90"
+          className="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-brand-purple px-5 text-sm font-semibold text-white transition hover:opacity-90"
         >
           Start a Partnership Conversation
         </Link>
