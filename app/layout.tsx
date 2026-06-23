@@ -68,7 +68,7 @@ export default function RootLayout({
                 />
               </span>
               <div>
-                <span className="font-heading block text-xl tracking-wide text-brand-green">
+                <span className="font-heading block text-xl tracking-wide text-brand-gold">
                   MunghaRise Africa
                 </span>
                 <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-brand-purple">
@@ -88,7 +88,7 @@ export default function RootLayout({
         <footer className="border-t border-brand-green/15 bg-background/90">
           <div className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-10 md:grid-cols-[1.1fr_0.9fr_1fr]">
             <div>
-              <p className="font-heading text-2xl text-brand-green">MunghaRise Africa</p>
+              <p className="font-heading text-2xl text-brand-gold">MunghaRise Africa</p>
               <p className="mt-3 max-w-md text-sm leading-7 text-foreground/80">
                 Rise. Empower. Transform.
               </p>
