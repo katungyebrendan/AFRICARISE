@@ -23,7 +23,7 @@ export default function ImpactPage() {
       <section className="mt-10 rounded-3xl p-8 frost-card">
         <h2 className="font-heading text-3xl tracking-tight text-brand-gold">What these numbers mean</h2>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-foreground/80 md:text-base">
-          Behind every number is a woman launching a business, a young person gaining future-ready skills, a household accessing new income, or a community building more resilient systems for food security and inclusion.
+          Behind every number is a woman launching a business, a young person gaining future-ready skills, a household accessing new income, and a community building more resilient systems for food security and inclusion.
         </p>
         <Link
           href="/get-involved"

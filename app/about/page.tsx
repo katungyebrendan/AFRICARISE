@@ -20,14 +20,14 @@ export default function AboutPage() {
 
       <section className="mt-10 grid gap-4 md:grid-cols-3">
         <article className="frost-card rounded-2xl p-6">
-          <h3 className="text-xl font-semibold text-brand-gold">Vision Statement</h3>
+          <h3 className="text-xl font-semibold text-brand-gold">Vision</h3>
           <p className="mt-2 text-sm leading-6 text-foreground/80">
             To become Africa&apos;s leading catalyst for empowering women and youth to create prosperous,
             inclusive, and sustainable communities.
           </p>
         </article>
         <article className="frost-card rounded-2xl p-6">
-          <h3 className="text-xl font-semibold text-brand-gold">Mission Statement</h3>
+          <h3 className="text-xl font-semibold text-brand-gold">Mission</h3>
           <p className="mt-2 text-sm leading-6 text-foreground/80">
             To empower women and youth through entrepreneurship, skills development, leadership,
             innovation, financial inclusion, and strategic partnerships that promote economic
