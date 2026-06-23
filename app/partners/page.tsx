@@ -5,7 +5,7 @@ import { partnerOpportunities, partnerTypes } from "../site-content";
 export default function PartnersPage() {
   return (
     <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
-      <h1 className="font-heading text-4xl tracking-tight text-brand-gold md:text-5xl">Partners</h1>
+      <h1 className="font-heading text-4xl tracking-tight text-brand-green md:text-5xl">Partners</h1>
       <p className="mt-4 max-w-3xl text-base leading-7 text-foreground/80">
         MunghaRise Africa welcomes partnerships that expand opportunity, deepen innovation, and strengthen the systems women and youth need to thrive.
         Mungha TV.

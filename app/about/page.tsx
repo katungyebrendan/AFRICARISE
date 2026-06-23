@@ -3,7 +3,7 @@ import { coreValues } from "../site-content";
 export default function AboutPage() {
   return (
     <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
-      <h1 className="font-heading text-4xl tracking-tight text-brand-gold md:text-5xl">About Us</h1>
+      <h1 className="font-heading text-4xl tracking-tight text-brand-green md:text-5xl">About Us</h1>
 
       <section className="mt-10 rounded-3xl p-8 frost-card">
         <h2 className="font-heading text-2xl tracking-tight text-brand-gold">Who We Are</h2>
