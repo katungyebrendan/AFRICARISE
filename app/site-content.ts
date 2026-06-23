@@ -118,12 +118,12 @@ export const projects = [
 ];
 
 export const impactStats = [
-  { label: "Women Empowered", value: "5,000+" },
-  { label: "Youth Trained", value: "10,000+" },
-  { label: "Businesses Supported", value: "1,500+" },
-  { label: "Jobs Created", value: "3,000+" },
-  { label: "Communities Reached", value: "100+" },
-  { label: "Strategic Partners", value: "50+" },
+  { label: "Women Empowered", value: "15+" },
+  { label: "Youth Trained", value: "30+" },
+  { label: "Businesses Supported", value: "5+" },
+  { label: "Jobs Created", value: "3+" },
+  { label: "Communities Reached", value: "2+" },
+  { label: "Strategic Partners", value: "3+" },
 ];
 
 export const partnerTypes = [
@@ -191,12 +191,10 @@ export const contactDetails = {
   organization: "MunghaRise Africa",
   addressLines: ["Kampala, Uganda"],
   emails: [
-    "info@mungharise.org",
-    "partnerships@mungharise.org",
-    "programs@mungharise.org",
+    "info@mungharise.com"
   ],
-  phoneDisplay: "+256 701 691 976",
-  phoneE164: "+256701691976",
+  phoneDisplay: "+256 786691976",
+  phoneE164: "+256786691976",
   socialLinks: [
     { label: "Facebook", value: "MunghaRise Africa" },
     { label: "LinkedIn", value: "MunghaRise Africa" },

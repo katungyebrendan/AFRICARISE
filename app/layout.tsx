@@ -90,7 +90,7 @@ export default function RootLayout({
             <div>
               <p className="font-heading text-2xl text-brand-green">MunghaRise Africa</p>
               <p className="mt-3 max-w-md text-sm leading-7 text-foreground/80">
-                Rise. Empower. Transform. Empowering women and youth to build Africa&apos;s future.
+                Rise. Empower. Transform.
               </p>
             </div>
 
