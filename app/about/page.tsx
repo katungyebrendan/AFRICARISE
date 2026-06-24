@@ -48,7 +48,7 @@ export default function AboutPage() {
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {coreValues.map((value) => (
             <article key={value.title} className="frost-card rounded-2xl p-6">
-              <h3 className="text-lg font-semibold text-brand-green">{value.title}</h3>
+              <h3 className="text-lg font-semibold text-brand-gold">{value.title}</h3>
               <p className="mt-3 text-sm leading-6 text-foreground/80">{value.description}</p>
             </article>
           ))}
