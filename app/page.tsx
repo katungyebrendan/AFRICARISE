@@ -86,7 +86,7 @@ export default function Home() {
 
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {projects.slice(0, 3).map((project) => (
-            <article key={project.title} className="rounded-2xl border border-brand-green/15 bg-background/50 p-5">
+            <article key={project.title} className="rounded-2xl border border-brand-gold/15 bg-background/50 p-5">
               <h3 className="text-lg font-semibold text-brand-gold">{project.title}</h3>
               <p className="mt-2 text-sm leading-6 text-foreground/80">{project.description}</p>
             </article>
