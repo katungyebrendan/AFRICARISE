@@ -58,7 +58,7 @@ export default function ContactPage() {
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {contactDetails.socialLinks.map((item) => (
             <article key={item.label} className="rounded-2xl border border-brand-green/15 bg-background/50 p-5">
-              <p className="text-xs uppercase tracking-[0.2em] text-brand-green">{item.label}</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-brand-gold">{item.label}</p>
               <p className="mt-2 text-sm font-semibold text-brand-green">{item.value}</p>
             </article>
           ))}
