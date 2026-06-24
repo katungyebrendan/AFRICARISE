@@ -13,9 +13,8 @@ export default function ImpactPage() {
       <section className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {impactStats.map((stat) => (
           <article key={stat.label} className="frost-card rounded-3xl p-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-brand-purple">Our Impact</p>
+            <p className="text-xs tracking-[0.2em] text-brand-purple">{stat.label}</p>
             <p className="mt-3 text-4xl font-bold text-brand-gold">{stat.value}</p>
-            <p className="mt-2 text-sm text-foreground/80">{stat.label}</p>
           </article>
         ))}
       </section>
