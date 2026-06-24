@@ -44,7 +44,7 @@ export default function Home() {
         </div>
 
         <div>
-        <h2 className="font-heading text-3xl tracking-tight text-brand-gold">
+        <h2 className="font-heading text-3xl tracking-tight text-brand-green">
           What we focus on
         </h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -71,7 +71,7 @@ export default function Home() {
       <section className="mt-12 rounded-3xl border border-brand-green/15 p-8 md:p-10 frost-card">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <h2 className="font-heading text-3xl tracking-tight text-brand-gold">Featured projects</h2>
+            <h2 className="font-heading text-3xl tracking-tight text-brand-green">Featured projects</h2>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-foreground/80 md:text-base">
               We turn mission into action through enterprise, innovation, climate resilience, and digital inclusion.
             </p>
