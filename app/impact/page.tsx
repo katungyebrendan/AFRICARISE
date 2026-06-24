@@ -5,7 +5,7 @@ import { impactStats } from "../site-content";
 export default function ImpactPage() {
   return (
     <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
-      <h1 className="font-heading text-4xl tracking-tight text-brand-gold md:text-5xl">Impact</h1>
+      <h1 className="font-heading text-4xl tracking-tight text-brand-green md:text-5xl">Impact</h1>
       <p className="mt-4 max-w-3xl text-base leading-7 text-foreground/80">
         We measure impact through people reached, enterprises strengthened, livelihoods expanded, and partnerships that create durable pathways for growth.
       </p>
@@ -13,9 +13,8 @@ export default function ImpactPage() {
       <section className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {impactStats.map((stat) => (
           <article key={stat.label} className="frost-card rounded-3xl p-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-brand-purple">Our Impact</p>
+            <p className="text-xs tracking-[0.2em] text-brand-purple">{stat.label}</p>
             <p className="mt-3 text-4xl font-bold text-brand-gold">{stat.value}</p>
-            <p className="mt-2 text-sm text-foreground/80">{stat.label}</p>
           </article>
         ))}
       </section>

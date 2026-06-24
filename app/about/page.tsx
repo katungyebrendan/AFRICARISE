@@ -3,7 +3,7 @@ import { coreValues } from "../site-content";
 export default function AboutPage() {
   return (
     <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
-      <h1 className="font-heading text-4xl tracking-tight text-brand-gold md:text-5xl">About Us</h1>
+      <h1 className="font-heading text-4xl tracking-tight text-brand-green md:text-5xl">About Us</h1>
 
       <section className="mt-10 rounded-3xl p-8 frost-card">
         <h2 className="font-heading text-2xl tracking-tight text-brand-gold">Who We Are</h2>
@@ -44,11 +44,11 @@ export default function AboutPage() {
       </section>
 
       <section className="mt-10">
-        <h2 className="font-heading text-3xl tracking-tight text-brand-gold">Core Values</h2>
+        <h2 className="font-heading text-3xl tracking-tight text-brand-green">Core Values</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {coreValues.map((value) => (
             <article key={value.title} className="frost-card rounded-2xl p-6">
-              <h3 className="text-lg font-semibold text-brand-gold">{value.title}</h3>
+              <h3 className="text-lg font-semibold text-brand-green">{value.title}</h3>
               <p className="mt-3 text-sm leading-6 text-foreground/80">{value.description}</p>
             </article>
           ))}

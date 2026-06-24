@@ -5,7 +5,7 @@ export default function ContactPage() {
 
   return (
     <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
-      <h1 className="font-heading text-4xl tracking-tight text-brand-gold md:text-5xl">Contact Us</h1>
+      <h1 className="font-heading text-4xl tracking-tight text-brand-green md:text-5xl">Contact Us</h1>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         <section className="frost-card rounded-2xl p-6">
@@ -58,8 +58,8 @@ export default function ContactPage() {
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {contactDetails.socialLinks.map((item) => (
             <article key={item.label} className="rounded-2xl border border-brand-green/15 bg-background/50 p-5">
-              <p className="text-xs uppercase tracking-[0.2em] text-brand-orange">{item.label}</p>
-              <p className="mt-2 text-sm font-semibold text-brand-gold">{item.value}</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-brand-green">{item.label}</p>
+              <p className="mt-2 text-sm font-semibold text-brand-green">{item.value}</p>
             </article>
           ))}
         </div>
