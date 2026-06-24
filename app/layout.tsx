@@ -89,18 +89,18 @@ export default function RootLayout({
           <div className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-10 md:grid-cols-[1.1fr_0.9fr_1fr]">
             <div>
               <p className="font-heading text-2xl text-brand-gold">MunghaRise Africa</p>
-              <div className="mt-4 inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-brand-green/15 bg-white shadow-[0_8px_28px_rgba(15,90,56,0.12)]">
-                <Image
-                  src="/logo.jpg"
-                  alt="MunghaRise Africa logo"
-                  width={56}
-                  height={56}
-                  className="h-14 w-14 object-contain"
-                />
-              </div>
               <p className="mt-3 max-w-md text-sm leading-7 text-foreground/80">
                 Rise. Empower. Transform.
               </p>
+              <div className="mt-4 inline-flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border border-brand-green/15 bg-white shadow-[0_10px_34px_rgba(15,90,56,0.15)]">
+                <Image
+                  src="/logo.jpg"
+                  alt="MunghaRise Africa logo"
+                  width={80}
+                  height={80}
+                  className="h-20 w-20 object-contain"
+                />
+              </div>
             </div>
 
             <div>
