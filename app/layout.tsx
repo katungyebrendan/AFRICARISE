@@ -19,15 +19,41 @@ const bodyFont = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mugharise.com"),
   title: "MunghaRise Africa",
   description:
     "Rising Opportunities. Transforming Lives. Empowering women and youth across Africa through entrepreneurship, innovation, leadership, and sustainable livelihoods.",
   icons: {
     icon: [
+      { url: "/icon.jpg", type: "image/jpeg" },
       { url: "/favicon.jpg", type: "image/jpeg" },
       { url: "/logo.jpg", type: "image/jpeg" },
     ],
-    apple: [{ url: "/favicon.jpg", type: "image/jpeg" }],
+    shortcut: [{ url: "/icon.jpg", type: "image/jpeg" }],
+    apple: [{ url: "/apple-icon.jpg", type: "image/jpeg" }],
+  },
+  openGraph: {
+    title: "MunghaRise Africa",
+    description:
+      "Rising Opportunities. Transforming Lives. Empowering women and youth across Africa through entrepreneurship, innovation, leadership, and sustainable livelihoods.",
+    url: "https://mugharise.com",
+    siteName: "MunghaRise Africa",
+    images: [
+      {
+        url: "/logo.jpg",
+        width: 512,
+        height: 512,
+        alt: "MunghaRise Africa logo",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "MunghaRise Africa",
+    description:
+      "Rising Opportunities. Transforming Lives. Empowering women and youth across Africa through entrepreneurship, innovation, leadership, and sustainable livelihoods.",
+    images: ["/logo.jpg"],
   },
 };
 
