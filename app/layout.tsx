@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { MobileScrollHeader } from "./components/mobile-scroll-header";
 import { Navigation } from "./components/navigation";
 import { ThemeToggle } from "./components/theme-toggle";
 import "./globals.css";
@@ -80,34 +81,36 @@ export default function RootLayout({
       className={`${headingFont.variable} ${bodyFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <header className="sticky top-0 z-30 border-b border-brand-green/15 bg-background/90 backdrop-blur-md">
-          <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
-            <Link href="/" className="group inline-flex items-center gap-3">
-              <span className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full border border-brand-green/15 bg-white shadow-[0_8px_28px_rgba(15,90,56,0.12)] transition-transform group-hover:scale-105">
-                <Image
-                  src="/logo.jpg"
-                  alt="MunghaRise Africa logo"
-                  width={48}
-                  height={48}
-                  className="h-12 w-12 object-contain"
-                  priority
-                />
-              </span>
-              <div>
-                <span className="font-heading block text-xl tracking-wide text-brand-gold">
-                  MunghaRise Africa
+        <MobileScrollHeader>
+          <header className="sticky top-0 z-30 border-b border-brand-green/15 bg-background/90 backdrop-blur-md">
+            <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+              <Link href="/" className="group inline-flex items-center gap-3">
+                <span className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full border border-brand-green/15 bg-white shadow-[0_8px_28px_rgba(15,90,56,0.12)] transition-transform group-hover:scale-105">
+                  <Image
+                    src="/logo.jpg"
+                    alt="MunghaRise Africa logo"
+                    width={48}
+                    height={48}
+                    className="h-12 w-12 object-contain"
+                    priority
+                  />
                 </span>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-brand-purple">
-                  Rising Opportunities. Transforming Lives.
-                </span>
+                <div>
+                  <span className="font-heading block text-xl tracking-wide text-brand-gold">
+                    MunghaRise Africa
+                  </span>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-brand-purple">
+                    Rising Opportunities. Transforming Lives.
+                  </span>
+                </div>
+              </Link>
+              <div className="flex flex-wrap items-center gap-5 text-sm font-semibold sm:justify-end">
+                <Navigation links={navigationLinks} />
+                <ThemeToggle />
               </div>
-            </Link>
-            <div className="flex flex-wrap items-center gap-5 text-sm font-semibold sm:justify-end">
-              <Navigation links={navigationLinks} />
-              <ThemeToggle />
             </div>
-          </div>
-        </header>
+          </header>
+        </MobileScrollHeader>
 
         <main className="flex-1 relative overflow-x-clip">{children}</main>
 
